@@ -6,20 +6,33 @@ while (numbersArray.length < 5){
 }
 
 document.querySelector('h2').innerHTML = numbersArray;
+const correctNumbers = [];
+
+
+setTimeout(
+    function(){
+        document.querySelector('h2').classList.add('none');
+    },
+    29 * 1000
+);
 
 setTimeout( 
     function (){
-        document.querySelector('h2').classList.add('none');
+        
         const arrayFromPrompt = [];
-    
         for (i = 0; i < 5; i++){
             let numberFromPrompt = parseInt(prompt ('Inserisci un numero tra quelli che vedevi'));
             arrayFromPrompt.push(numberFromPrompt);
         }
     
         for (i = 0; i <5; i++){
-            arrayFromPrompt[i] = numbersArray[i];
+            if (arrayFromPrompt[i] = numbersArray[i]){
+                correctNumbers.push(arrayFromPrompt[i])
+            }
+            document.getElementById('output').innerHTML = `Hai indovinato i seguenti numeri: ${correctNumbers}`
+            
         }
+        
     },
     30 * 1000
 );
